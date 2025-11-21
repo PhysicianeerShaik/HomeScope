@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 280" role="img" aria-label="ENMED, Texas A&amp;M University, Houston Methodist">
+  <title>ENMED, Texas A&amp;M University, Houston Methodist</title>
+  <rect width="1400" height="280" fill="#fff" rx="18" />
+  <g font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="80" y="140" font-size="140" font-weight="700" fill="#731935">EN</text>
+    <text x="340" y="140" font-size="140" font-weight="700" fill="#0a2f63">MED</text>
+    <text x="80" y="200" font-size="40" letter-spacing="18" fill="#9095a2">ENGINEERING &amp; MEDICINE</text>
+  </g>
+  <line x1="640" y1="40" x2="640" y2="240" stroke="#c8ccd6" stroke-width="3" />
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#4d0b0b">
+    <text x="720" y="160" font-size="160" font-weight="700">A&amp;M</text>
+    <text x="720" y="220" font-size="48" letter-spacing="10" font-family="Inter, 'Segoe UI', sans-serif">TEXAS A&amp;M UNIVERSITY</text>
+  </g>
+  <g fill="#0b2d59" font-family="'Times New Roman', 'Georgia', serif">
+    <text x="1040" y="112" font-size="40" font-family="Inter, 'Segoe UI', sans-serif" letter-spacing="10" fill="#8ca0c9">HOUSTON</text>
+    <text x="1030" y="198" font-size="120" font-weight="600">Methodist</text>
+    <text x="1040" y="240" font-size="36" font-family="Inter, 'Segoe UI', sans-serif" letter-spacing="14" fill="#8ca0c9">LEADING MEDICINE</text>
+  </g>
+</svg>

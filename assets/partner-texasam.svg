@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" role="img" aria-label="Texas A&amp;M University logo">
+  <title>Texas A&amp;M University</title>
+  <rect x="4" y="4" width="352" height="152" rx="26" fill="#500000" />
+  <rect x="4" y="4" width="352" height="152" rx="26" fill="none" stroke="#ffd7be" stroke-width="4" />
+  <text x="180" y="86" font-size="78" font-family="Georgia, 'Times New Roman', serif" font-weight="700" fill="#fefefe" text-anchor="middle">A&amp;M</text>
+  <text x="180" y="122" font-size="24" font-family="Inter, 'Segoe UI', sans-serif" letter-spacing="4" fill="#fcefe0" text-anchor="middle">TEXAS A&amp;M UNIVERSITY</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-label="HomeScope logo">
+  <title>HomeScope logo</title>
+  <path d="M30 118L110 38L190 118V200H30Z" fill="#ffd429" stroke="#0b0d18" stroke-width="8" stroke-linejoin="round" />
+  <ellipse cx="110" cy="140" rx="50" ry="58" fill="#fff" stroke="#0b0d18" stroke-width="8" />
+  <path d="M110 88V198" stroke="#0b0d18" stroke-width="12" stroke-linecap="round" />
+  <path d="M110 92L60 128L110 140Z" fill="#ffde59" />
+  <circle cx="110" cy="92" r="12" fill="#ffd429" stroke="#0b0d18" stroke-width="6" />
+</svg>
