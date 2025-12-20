@@ -2,12 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>HomeScope Wrapped 2025</title>
-    <meta name="theme-color" content="#0b0b0b" />
+    <meta name="theme-color" content="#05060a" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
@@ -19,11 +16,9 @@
         --muter: rgba(246, 248, 252, 0.64);
         --stroke: rgba(246, 248, 252, 0.12);
         --glass: rgba(255, 255, 255, 0.06);
-        --glass2: rgba(255, 255, 255, 0.1);
         --accent: #6df5d8;
         --accent-2: #8dd7ff;
         --shadow: 0 20px 70px rgba(0, 0, 0, 0.65);
-        --radius: 22px;
         --safe-top: env(safe-area-inset-top, 0px);
         --safe-bot: env(safe-area-inset-bottom, 0px);
       }
@@ -41,16 +36,17 @@
         min-height: 100vh;
         padding-top: var(--safe-top);
         padding-bottom: var(--safe-bot);
+        display: grid;
+        place-items: center;
       }
 
       .app {
         width: 100%;
         max-width: 1240px;
-        margin: 0 auto;
-        padding: 20px 16px 28px;
+        padding: 18px 16px 24px;
         display: flex;
         flex-direction: column;
-        gap: 18px;
+        gap: 16px;
       }
 
       /* Top bar */
@@ -116,9 +112,6 @@
         box-shadow: 0 12px 46px rgba(141, 215, 255, 0.3);
         outline: none;
       }
-      .link-out.primary {
-        background: linear-gradient(135deg, rgba(109, 245, 216, 0.28), rgba(141, 215, 255, 0.28));
-      }
       .toggle {
         border: 1px solid var(--stroke);
         background: var(--glass);
@@ -146,85 +139,13 @@
         outline: none;
       }
 
-      /* Layout */
+      /* Centered player */
       .layout {
-        display: grid;
-        gap: 26px;
-        align-items: start;
-      }
-
-      .intro {
-        padding: 18px 18px 20px;
-        border: 1px solid var(--stroke);
-        border-radius: 20px;
-        background: linear-gradient(135deg, rgba(109, 245, 216, 0.06), rgba(141, 215, 255, 0.05)), rgba(255,255,255,0.03);
-        backdrop-filter: blur(12px);
-        box-shadow: 0 16px 50px rgba(0,0,0,0.4);
-      }
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 12px;
-        letter-spacing: 0.2px;
-        color: var(--muted);
-        padding: 8px 10px;
-        border-radius: 999px;
-        border: 1px solid rgba(109, 245, 216, 0.35);
-        background: rgba(109, 245, 216, 0.08);
-      }
-      h1 {
-        margin: 14px 0 10px;
-        font-size: clamp(26px, 5vw, 36px);
-        line-height: 1.12;
-        letter-spacing: -0.3px;
-      }
-      .lede {
-        margin: 0 0 14px;
-        color: var(--muted);
-        line-height: 1.5;
-        max-width: 640px;
-      }
-      .chips {
         display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin: 8px 0 14px;
-      }
-      .chip {
-        display: inline-flex;
+        flex-direction: column;
         align-items: center;
-        gap: 6px;
-        padding: 8px 12px;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--stroke);
-        color: var(--muted);
-        font-size: 13px;
-      }
-      .intro-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        align-items: center;
-        margin-top: 6px;
-      }
-      .ghost {
-        background: transparent;
-        border: 1px solid var(--stroke);
-        color: var(--fg);
-        padding: 10px 14px;
-        border-radius: 12px;
-        font-weight: 700;
-        letter-spacing: 0.1px;
-        cursor: pointer;
-        transition: border-color 160ms ease, transform 160ms ease;
-      }
-      .ghost:hover,
-      .ghost:focus-visible {
-        border-color: rgba(141, 215, 255, 0.4);
-        transform: translateY(-1px);
-        outline: none;
+        gap: 16px;
+        padding: 6px 0 0;
       }
 
       .player {
@@ -355,14 +276,12 @@
         backdrop-filter: blur(14px);
       }
 
-      /* Accessibility: reduce motion */
       @media (prefers-reduced-motion: reduce) {
         .slide, .segment > span {
           transition: none !important;
         }
       }
 
-      /* Responsive: phones */
       @media (max-width: 720px) {
         .topbar {
           flex-direction: column;
@@ -372,29 +291,8 @@
           width: 100%;
           justify-content: space-between;
         }
-        .layout {
-          grid-template-columns: 1fr;
-        }
-        .intro {
-          order: 2;
-        }
-        .player {
-          order: 1;
-        }
         .device-shell {
           width: min(100%, 420px);
-        }
-      }
-
-      /* Responsive: desktop */
-      @media (min-width: 960px) {
-        .layout {
-          grid-template-columns: 1.1fr 0.9fr;
-          gap: 32px;
-        }
-        .intro {
-          position: sticky;
-          top: 20px;
         }
       }
     </style>
@@ -413,45 +311,19 @@
         <div class="controls">
           <a
             class="link-out"
-            href="https://www.homescope.ai"
+            href="https://physicianeershaik.github.io/HomeScope/"
             target="_blank"
             rel="noreferrer"
             aria-label="Open the HomeScope website in a new tab"
             >Visit HomeScope</a
           >
-          <button class="toggle" id="autoToggle" type="button" aria-pressed="false">
-            Auto: Off
+          <button class="toggle" id="autoToggle" type="button" aria-pressed="true">
+            Auto: On
           </button>
         </div>
       </header>
 
       <div class="layout">
-        <section class="intro">
-          <div class="eyebrow">Your 2025 snapshot</div>
-          <h1>See the HomeScope story in a tap-first canvas.</h1>
-          <p class="lede">
-            Built for the phone you actually use, tuned for desktop reviews. Swipe through the
-            journey, pause on the stats, then hop back to the HomeScope homepage to meet the team
-            and the research.
-          </p>
-          <div class="chips">
-            <span class="chip">Tap &amp; swipe friendly</span>
-            <span class="chip">Auto-play optional</span>
-            <span class="chip">Optimized for iPhone &amp; desktop</span>
-          </div>
-          <div class="intro-actions">
-            <a
-              class="link-out primary"
-              href="https://www.homescope.ai"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Open the HomeScope homepage"
-              >Explore HomeScope</a
-            >
-            <button class="ghost" type="button" id="focusStage">Jump to slides</button>
-          </div>
-        </section>
-
         <section class="player">
           <div class="progress" aria-hidden="true">
             <div class="progress-track" id="progressTrack"></div>
@@ -493,10 +365,9 @@
       const stage = document.getElementById("stage");
       const progressTrack = document.getElementById("progressTrack");
       const autoToggle = document.getElementById("autoToggle");
-      const focusStageBtn = document.getElementById("focusStage");
 
       let index = 0;
-      let autoOn = false;
+      let autoOn = true;
       let autoTimer = null;
       let holdTimer = null;
       let isHolding = false;
@@ -546,7 +417,7 @@
         });
 
         attachEvents();
-        render();
+        setAuto(true);
       }
 
       function render() {
@@ -562,7 +433,7 @@
         segments.forEach((fill, i) => {
           if (i < index) fill.style.width = "100%";
           else if (i > index) fill.style.width = "0%";
-          else fill.style.width = autoOn ? "0%" : "100%"; // when not auto, show current as filled
+          else fill.style.width = autoOn ? "0%" : "100%";
         });
 
         if (autoOn) animateCurrentProgress();
@@ -573,13 +444,11 @@
         const fill = fills[index];
         if (!fill) return;
 
-        // Animate current segment from 0 to 100 over AUTO_MS
-        // Use rAF for reliable timing + easy pause.
         const start = performance.now();
         const duration = AUTO_MS;
 
         function tick(now) {
-          if (!autoOn || isHolding) return; // paused or off
+          if (!autoOn || isHolding) return;
           const t = clamp((now - start) / duration, 0, 1);
           fill.style.width = `${Math.round(t * 100)}%`;
           if (t < 1) requestAnimationFrame(tick);
@@ -599,7 +468,6 @@
 
       function next() {
         if (index >= SLIDES.length - 1) {
-          // end: loop back to start (Spotify-like)
           go(0);
         } else {
           go(index + 1);
@@ -637,14 +505,9 @@
       }
 
       function attachEvents() {
-        if (focusStageBtn && stage) {
-          focusStageBtn.addEventListener("click", () => stage.focus({ preventScroll: false }));
-        }
-
         // Tap/click to advance (but ignore clicks on controls)
         deckEl.addEventListener("click", (e) => {
           const target = e.target;
-          // If user clicked the toggle (or header) don't advance
           if (target && (target.id === "autoToggle" || target.closest(".topbar"))) return;
           next();
         });
@@ -675,7 +538,6 @@
           x0 = e.touches[0].clientX;
           y0 = e.touches[0].clientY;
 
-          // Hold to pause if Auto is on
           if (autoOn) {
             holdTimer = setTimeout(() => {
               isHolding = true;
@@ -690,7 +552,6 @@
           const dx = x1 - x0;
           const dy = y1 - y0;
 
-          // If user is swiping, cancel hold-to-pause intent
           if (holdTimer && (Math.abs(dx) > 12 || Math.abs(dy) > 12)) {
             clearTimeout(holdTimer);
             holdTimer = null;
@@ -706,15 +567,12 @@
             holdTimer = null;
           }
 
-          // If we were holding, release and resume
           if (isHolding) {
             isHolding = false;
-            // resume progress animation
             if (autoOn) render();
             return;
           }
 
-          // Detect swipe vs tap
           const changed = e.changedTouches && e.changedTouches[0];
           if (!changed) {
             next();
@@ -725,12 +583,10 @@
           const dx = x1 - x0;
           const dy = y1 - y0;
 
-          // Horizontal swipe threshold
           if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.2) {
             if (dx < 0) next();
             else prev();
           } else {
-            // tap
             next();
           }
         }, { passive: true });
