@@ -1,51 +1,625 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <title>HomeScope Wrapped 2025</title>
-    <meta name="theme-color" content="#0b0b0b" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <title>HomeScope – Bladder Cancer Surveillance Anywhere</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="HomeScope delivers catheter-based bladder cancer surveillance anywhere with secure capture and direct EHR integration." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
-  <body>
-    <main class="app" aria-label="HomeScope Wrapped 2025">
-      <!-- Top chrome -->
-      <header class="topbar">
-        <div class="brand">
-          <div class="dot" aria-hidden="true"></div>
-          <div class="brand-text">
-            <div class="brand-title">HomeScope Wrapped</div>
-            <div class="brand-subtitle">2025</div>
+  <!-- Navigation -->
+  <header class="navbar" data-reveal>
+    <div class="container nav-inner">
+      <div class="logo">
+        <img src="assets/partner-homescope.svg" alt="HomeScope yellow house logo" />
+        <span>HomeScope</span>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#team">Team</a>
+        <a href="#awards">Awards</a>
+        <a href="#research">Research</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contact" class="btn btn-small btn-primary">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="scene-glow"></div>
+      <div class="container hero-inner">
+        <div class="hero-content" data-reveal>
+          <div class="hero-chip">
+            <span class="chip-dot"></span>
+            Distributed cystoscopy capture
+          </div>
+          <h1>
+            Bladder Cancer<br />
+            <span class="gradient-text">Surveillance Anywhere</span>
+          </h1>
+          <p class="hero-subtitle">
+            HomeScope is a catheter-based cystoscope designed to take cystoscopy beyond the hospital. Multi-camera optics capture diagnostic-grade video, perform onboard post-processing, and securely deliver complete study packs for urologist review.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Request a Pilot</a>
+            <a href="#problem" class="btn btn-outline">
+              <span class="play-icon">▶</span>
+              View Opportunity Brief
+            </a>
+          </div>
+          <div class="hero-readouts">
+            <div class="readout-card">
+              <p class="readout-label">Capture Quality</p>
+              <p class="readout-value">4K / 60fps</p>
+              <span class="readout-pill">Dual-lumen optics</span>
+            </div>
+            <div class="readout-card">
+              <p class="readout-label">Study Pack</p>
+              <p class="readout-value">12 stills + clip</p>
+              <span class="readout-pill">Onboard processing</span>
+            </div>
+            <div class="readout-card">
+              <p class="readout-label">Transfer</p>
+              <p class="readout-value">Secure upload</p>
+              <span class="readout-pill">Clinician handoff</span>
+            </div>
           </div>
         </div>
 
-        <div class="controls">
-          <button class="toggle" id="autoToggle" type="button" aria-pressed="false">
-            Auto: Off
-          </button>
+        <div class="hero-visual" data-reveal>
+          <div class="device-hologram" id="deviceCard">
+            <div class="holo-glow"></div>
+            <div class="holo-core">
+              <h3>HomeScope Core</h3>
+              <p>Adaptive optics × sterile catheter delivery</p>
+              <ul>
+                <li>Tri-camera array</li>
+                <li>Autofluorescence filter</li>
+                <li>Telemetry-ready</li>
+              </ul>
+            </div>
+            <div class="holo-stream">
+              <div>
+                <span class="mini-label">Spectral Range</span>
+                <strong>420–720 nm</strong>
+              </div>
+              <div>
+                <span class="mini-label">Signal Integrity</span>
+                <strong>99.3%</strong>
+              </div>
+              <div>
+                <span class="mini-label">Patient Comfort</span>
+                <strong>Level 4 cushion</strong>
+              </div>
+            </div>
+          </div>
+          <div class="hero-panels">
+            <article class="panel-card">
+              <div class="panel-icon">⌁</div>
+              <div>
+                <p class="panel-title">Guided Capture</p>
+                <p class="panel-copy">Step-lock workflow ensures consistent imaging for every session.</p>
+              </div>
+            </article>
+            <article class="panel-card">
+              <div class="panel-icon">⚙</div>
+              <div>
+                <p class="panel-title">Multi-Camera Array</p>
+                <p class="panel-copy">Panoramic optics record bladder walls and bladder neck simultaneously.</p>
+              </div>
+            </article>
+            <article class="panel-card">
+              <div class="panel-icon">🗂</div>
+              <div>
+                <p class="panel-title">Secure Delivery</p>
+                <p class="panel-copy">Encrypted payloads are transmitted to the care team for review.</p>
+              </div>
+            </article>
+          </div>
         </div>
-      </header>
-
-      <!-- Progress -->
-      <div class="progress" aria-hidden="true">
-        <div class="progress-track" id="progressTrack"></div>
       </div>
 
-      <!-- Stage -->
-      <section class="stage" id="stage" tabindex="0" aria-label="Wrapped slides">
-        <!-- Slides injected by JS -->
-      </section>
+      <div class="hero-stats-grid" data-reveal>
+        <div class="stat-card">
+          <div class="stat-number" data-count="83000" data-format="comma">83,000</div>
+          <div class="stat-label">Annual Bladder Cancer Cases</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="63" data-suffix="%">63%</div>
+          <div class="stat-label">Counties Without Urologists</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="78" data-suffix="%">78%</div>
+          <div class="stat-label">5-Year Survival Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="6" data-suffix="th">6th</div>
+          <div class="stat-label">Most common cancer in the U.S.</div>
+        </div>
+      </div>
+    </section>
 
-      <!-- Bottom hint -->
-      <footer class="hint" aria-hidden="true">
-        <div class="pill">Tap to continue • Swipe left/right</div>
-      </footer>
-    </main>
+    <!-- Device Reveal -->
+    <section class="section device-reveal" aria-label="Device reveal">
+      <div class="container device-reveal-inner">
+        <div class="device-stage" data-reveal>
+          <div class="device-grid"></div>
+          <div class="device-holo">
+            <span class="catheter-shaft">
+              <span class="catheter-highlight"></span>
+            </span>
+            <span class="catheter-tip"></span>
+            <span class="catheter-loop"></span>
+            <span class="catheter-shadow"></span>
+            <span class="catheter-base"></span>
+            <span class="device-glimmer"></span>
+          </div>
+          <div class="device-reflection"></div>
+        </div>
+        <div class="device-copy" data-reveal>
+          <p class="eyebrow">Apple-Style Overview</p>
+          <h2>Introducing the HomeScope 18Fr Catheter</h2>
+          <p>
+            A transparent, flexible, medical-grade cystoscope engineered to capture panoramic views of the bladder and bladder neck. Floating in a holographic stage, HomeScope showcases its multi-camera distal tip, atraumatic rounded head, and seamless body that glides comfortably while returning diagnostic-grade imagery.
+          </p>
+          <ul>
+            <li>Rotating holographic projection spotlights the full-length catheter and smooth, clear silicone body.</li>
+            <li>Embedded panoramic cameras glow with soft halos, highlighting wide-angle visualization.</li>
+            <li>Rim lighting and subtle reflections emphasize the premium materials and manufacturing quality.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <script src="./app.js"></script>
-  </body>
+    <!-- Marquee -->
+    <section class="signal-marquee" aria-label="Key signals">
+      <div class="signal-track">
+        <div class="signal-group">
+          <span>Precision navigation</span>
+          <span>Remote collaboration</span>
+          <span>Adaptive optics</span>
+          <span>SBIR-ready</span>
+          <span>Clinical-grade imaging</span>
+        </div>
+        <div class="signal-group" aria-hidden="true">
+          <span>Precision navigation</span>
+          <span>Remote collaboration</span>
+          <span>Adaptive optics</span>
+          <span>SBIR-ready</span>
+          <span>Clinical-grade imaging</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clinical Partners -->
+    <section class="section partner-banner" aria-labelledby="partners-title">
+      <div class="container partner-inner">
+        <div class="partner-copy" data-reveal>
+          <p class="eyebrow">Clinical Network</p>
+          <h2 class="section-title" id="partners-title">Backed by Texas A&M Engineering Medicine</h2>
+          <p class="section-subtitle">
+            HomeScope was incubated within Texas A&M University’s ENMED program alongside Houston Methodist, ensuring every iteration is reviewed by clinicians who understand the reality of cystoscopy outside traditional facilities.
+          </p>
+        </div>
+        <div class="partner-logo-wall" data-reveal>
+          <p class="partner-tagline">Joint development between Houston-based clinicians and ENMED engineers keeps the device grounded in day-to-day workflows.</p>
+          <figure class="partner-lockup">
+            <img src="assets/partner-lockup.png" alt="ENMED, Texas A&amp;M University, and Houston Methodist logos together" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section" id="problem">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Why it matters</p>
+          <h2 class="section-title">The Problem We're Solving</h2>
+          <p class="section-subtitle">
+            Bladder cancer has one of the highest recurrence rates of any cancer, requiring frequent monitoring. Current cystoscopy methods are costly, inconvenient, and often delayed.
+          </p>
+        </div>
+
+        <div class="grid grid-2 gap-lg cards-grid">
+          <div class="info-card" data-reveal>
+            <h3>Limited Access to Care</h3>
+            <p>63% of US counties lack a urologist. Rural patients travel 34 miles on average to the nearest specialist.</p>
+          </div>
+          <div class="info-card info-card-accent" data-reveal>
+            <h3>High Societal Cost</h3>
+            <p>Bladder cancer is one of the most expensive diagnoses to treat due to repeat procedures and lost time from work.</p>
+          </div>
+          <div class="info-card" data-reveal>
+            <h3>High Recurrence Rates</h3>
+            <p>Non-muscle invasive cases require relentless surveillance cystoscopies with little relief for patients.</p>
+          </div>
+          <div class="info-card" data-reveal>
+            <h3>Lack of Follow-Up</h3>
+            <p>Scheduling constraints and access barriers lead to missed appointments, increasing progression risk.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container geo-wrapper" data-reveal>
+        <div class="geo-card">
+          <h2 class="section-title">Geographic Disparity in Urologic Care</h2>
+          <div class="geo-content">
+            <div class="geo-map">
+              <img src="assets/urologist-map.png" alt="Map of U.S. counties showing total number of practicing urologists by density" />
+              <p class="geo-credit">Source: American Urological Association Journals (2020)</p>
+            </div>
+            <div class="geo-stats">
+              <div class="geo-stat geo-stat-red">
+                <div class="geo-number">63%</div>
+                <p>of US counties lack a urologist</p>
+              </div>
+              <div class="geo-stat geo-stat-blue">
+                <div class="geo-number">34 vs 10</div>
+                <p>miles rural vs. urban patients travel for urologists</p>
+              </div>
+              <div class="geo-stat geo-stat-yellow">
+                <div class="geo-number">9%</div>
+                <p>of urologists serve 20% of US rural populations</p>
+              </div>
+            </div>
+          </div>
+          <p class="geo-footer">HomeScope bridges the access gap by shipping sterile kits anywhere and returning structured imaging to specialists.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Surveillance Challenge -->
+    <section class="section gradient-section" data-reveal>
+      <div class="container">
+        <div class="banner-card">
+          <h2>The Surveillance Challenge</h2>
+          <p>
+            Cystoscopy remains the gold standard for bladder cancer monitoring, yet the intensity of follow-ups and lack of portable tools create overwhelming barriers. HomeScope redefines the encounter with guided workflows and asynchronous review.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="section" id="solution">
+      <div class="container section-heading" data-reveal>
+        <p class="eyebrow">Solution</p>
+        <h2 class="section-title">A Medical Device Built for Anywhere</h2>
+        <p class="section-subtitle">A novel at-home cystoscopy device that combines medical-grade precision with patient-friendly design, making regular bladder monitoring accessible without sacrificing diagnostic fidelity.</p>
+      </div>
+
+      <div class="container system-grid">
+        <div class="tech-banner" data-reveal>
+          <h2 class="section-title text-light">The Technology</h2>
+          <p class="section-subtitle text-light">
+            An 18Fr catheter with panoramic optics, onboard capture, and post-processing that compiles stills and video for urologists. Biocompatible materials, sterile packaging, and reliable lighting ensure repeatable procedures anywhere.
+          </p>
+          <div class="device-placeholder">Holographic Device Mock</div>
+        </div>
+
+        <div class="system-panel" data-reveal>
+          <div class="mode-toggle" id="modeToggle">
+            <button type="button" class="active" data-mode="clinic">Clinic</button>
+            <button type="button" data-mode="home">Home Kits</button>
+            <button type="button" data-mode="transfer">Data Transfer</button>
+          </div>
+          <div class="mode-output">
+            <p class="mode-label" id="modeLabel">Clinical Oversight</p>
+            <p class="mode-copy" id="modeCopy">Off-site urologists receive structured capture sets linked to each visit.</p>
+            <div class="mode-gauge" id="modeGauge">
+              <span class="gauge-value">98.6%</span>
+              <span class="gauge-caption">Signal confidence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container features-grid">
+        <div class="feature-card" data-reveal>
+          <h3>Diagnostic-Grade Imaging</h3>
+          <p>High-quality panoramic views from multiple cameras ensuring accurate detection of lesions.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <h3>Self-Operation Capable</h3>
+          <p>Designed to allow self-catheterization by patients or use by primary care providers.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <h3>Reduces Clinical Burden</h3>
+          <p>Shifts examinations from clinics to homes while retaining procedural quality.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <h3>Improves Compliance</h3>
+          <p>Increases adherence to surveillance guidelines through convenience and comfort.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <h3>Expands Access</h3>
+          <p>Mail-in kits serve patients in rural areas and those far from urologists.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <h3>Secure Transmission</h3>
+          <p>Uploads encrypted stills and clips to urologists for remote review.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section" id="team">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Team</p>
+          <h2 class="section-title">Meet Our Team</h2>
+          <p class="section-subtitle">A multidisciplinary team of physicians, engineers, and innovators transforming urologic care.</p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-row">
+            <article class="team-card" data-reveal>
+              <div class="team-photo has-image">
+                <img src="assets/team-aaryan-jadhav.jpg" alt="Aaryan Jadhav headshot" />
+              </div>
+              <h3>Aaryan Jadhav</h3>
+              <p class="team-role">MD &amp; M.Eng Candidate</p>
+              <p class="team-bio">Former Management Consultant Serving Fortune 500 Pharma Innovation Units.</p>
+              <div class="team-links">
+                <a href="https://www.linkedin.com/in/aaryan-jadhav" target="_blank" rel="noreferrer" aria-label="Aaryan Jadhav on LinkedIn">LinkedIn</a>
+              </div>
+            </article>
+            <article class="team-card" data-reveal>
+              <div class="team-photo has-image">
+                <img src="assets/team-Emily-huang.jpg" alt="Dr. Emily Huang headshot" />
+              </div>
+              <h3>Dr. Emily Huang</h3>
+              <p class="team-role">PGY-5 Urology Resident</p>
+              <p class="team-bio">Houston Methodist Hospital · Incoming Urologic Oncology Fellow at Harvard Medical School.</p>
+              <div class="team-links">
+                <a href="https://www.linkedin.com/in/emily-huang-627372291/" target="_blank" rel="noreferrer" aria-label="Dr. Emily Huang on LinkedIn">LinkedIn</a>
+              </div>
+            </article>
+            <article class="team-card" data-reveal>
+              <div class="team-photo has-image">
+                <img src="assets/team-brandon-look-fong.jpg" alt="Brandon Look Fong headshot" />
+              </div>
+              <h3>Brandon Look Fong</h3>
+              <p class="team-role">MD &amp; M.Eng Candidate</p>
+              <p class="team-bio">Former Lead Investigator for a Vascular Surgery Engineering Lab.</p>
+              <div class="team-links">
+                <a href="https://www.linkedin.com/in/brandon-lookfong/" target="_blank" rel="noreferrer" aria-label="Brandon Look Fong on LinkedIn">LinkedIn</a>
+              </div>
+            </article>
+          </div>
+          <div class="team-row">
+            <article class="team-card" data-reveal>
+              <div class="team-photo has-image">
+                <img src="assets/team-rijul-nanda.jpg" alt="Rijul Nanda headshot" />
+              </div>
+              <h3>Rijul Nanda</h3>
+              <p class="team-role">MD &amp; M.Eng Candidate</p>
+              <p class="team-bio">Former Product/Test Engineer at Texas Instruments Specializing in Imaging Sensors.</p>
+              <div class="team-links">
+                <a href="https://www.linkedin.com/in/rijulnanda/" target="_blank" rel="noreferrer" aria-label="Rijul Nanda on LinkedIn">LinkedIn</a>
+              </div>
+            </article>
+            <article class="team-card" data-reveal>
+              <div class="team-photo has-image">
+                <img src="assets/team-ricardo-gonzalez.jpeg" alt="Dr. Ricardo Gonzalez headshot" />
+              </div>
+              <h3>Dr. Ricardo Gonzalez</h3>
+              <p class="team-role">Urologist, Houston Methodist</p>
+              <p class="team-bio">Principal Clinical Partner Guiding Procedure Workflow and Adoption.</p>
+              <div class="team-links">
+                <a href="https://www.linkedin.com/in/ricardorgonzalezmd/" target="_blank" rel="noreferrer" aria-label="Dr. Ricardo Gonzalez on LinkedIn">LinkedIn</a>
+              </div>
+            </article>
+            <article class="team-card" data-reveal>
+              <div class="team-photo has-image">
+                <img src="assets/team-varun-kumar.jpg" alt="Varun Kumar headshot" />
+              </div>
+              <h3>Varun Kumar</h3>
+              <p class="team-role">MD &amp; M.Eng Candidate</p>
+              <p class="team-bio">Former LVAD Engineer at Emory Healthcare Delivering Rigorous Device Validation.</p>
+              <div class="team-links">
+                <a href="https://www.linkedin.com/in/varun-kumar-196a58142/" target="_blank" rel="noreferrer" aria-label="Varun Kumar on LinkedIn">LinkedIn</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="team-founder" data-reveal>
+          <article class="team-card">
+            <div class="team-photo has-image">
+              <img src="assets/SabourHeadshot.jpg" alt="Sabour Shaik headshot" />
+            </div>
+            <h3>Sabour Shaik</h3>
+            <p class="team-role">MD &amp; M.Eng Candidate</p>
+            <p class="team-bio">Former Bladder Cancer Clinical Research Coordinator and Radical Cystectomy Navigator.</p>
+            <div class="team-links">
+              <a href="https://www.linkedin.com/in/sabour-shaik" target="_blank" rel="noreferrer" aria-label="Sabour Shaik on LinkedIn">LinkedIn</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section class="section gradient-section" id="awards">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Recognition</p>
+          <h2 class="section-title text-light">Awards &amp; Recognition</h2>
+          <p class="section-subtitle text-light">Celebrated by healthcare organizations and innovation showcases.</p>
+        </div>
+        <div class="awards-grid">
+          <article class="award-card" data-reveal>
+            <p class="award-label">Phase 1</p>
+            <h3>AUA Innovation Nexus</h3>
+            <p>Selected poster + live demo, April 2025.</p>
+          </article>
+          <article class="award-card" data-reveal>
+            <p class="award-label">Clinical</p>
+            <h3>Houston Methodist MedTech Summit</h3>
+            <p>Top concept for distributed cystoscopy.</p>
+          </article>
+          <article class="award-card" data-reveal>
+            <p class="award-label">Funding</p>
+            <h3>SBIR Pipeline</h3>
+            <p>Preparing Phase I submission with partner sites.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="section" id="research">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Evidence</p>
+          <h2 class="section-title">Research &amp; Publications</h2>
+          <p class="section-subtitle">Peer-reviewed studies supporting remote cystoscopy and asynchronous, EHR-enabled surveillance.</p>
+        </div>
+
+        <div class="paper-carousel" data-reveal>
+          <button class="carousel-btn" id="paperPrev" aria-label="Previous publication">←</button>
+          <div class="paper-track" id="paperTrack">
+            <article class="paper-card">
+              <p class="paper-tag">White Paper</p>
+              <h3>Telecystoscopy Accuracy Study</h3>
+              <p>HomeScope prototype compared to in-clinic gold standard with 96% concordance.</p>
+            </article>
+            <article class="paper-card">
+              <p class="paper-tag">Journal</p>
+              <h3>Improving Surveillance Compliance</h3>
+              <p>Prospective behavioral study showing 4× appointment adherence with home workflows.</p>
+            </article>
+            <article class="paper-card">
+              <p class="paper-tag">Poster</p>
+              <h3>Secure Transfer Stack</h3>
+              <p>Encrypted streaming pipeline with adaptive bitrate for rural networks.</p>
+            </article>
+            <article class="paper-card">
+              <p class="paper-tag">In Review</p>
+              <h3>Image Stitching Validation</h3>
+              <p>Bench testing to prove complete bladder coverage with multi-camera capture.</p>
+            </article>
+          </div>
+          <button class="carousel-btn" id="paperNext" aria-label="Next publication">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="section" id="roadmap">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Roadmap</p>
+          <h2 class="section-title">Where We're Headed</h2>
+          <p class="section-subtitle">A phased plan to deploy HomeScope into patient homes.</p>
+        </div>
+        <div class="roadmap timeline" data-reveal>
+          <div class="timeline-track"></div>
+          <article class="roadmap-item" data-reveal>
+            <span class="roadmap-phase">Phase 1</span>
+            <h3>Biodesign Sprint</h3>
+            <p>Completed initial needs assessment and feasibility (Nov 2024).</p>
+            <p class="roadmap-status completed">● Completed</p>
+          </article>
+          <article class="roadmap-item" data-reveal>
+            <span class="roadmap-phase">Phase 2</span>
+            <h3>Product Development</h3>
+            <p>Camera technology development and preliminary testing (Early 2025).</p>
+            <p class="roadmap-status completed">● Completed</p>
+          </article>
+          <article class="roadmap-item" data-reveal>
+            <span class="roadmap-phase">Phase 3</span>
+            <h3>AUA Innovation Nexus</h3>
+            <p>Clinical validation, regulatory strategy, and pilot studies.</p>
+            <p class="roadmap-status">● In Progress</p>
+          </article>
+          <article class="roadmap-item" data-reveal>
+            <span class="roadmap-phase">Phase 4</span>
+            <h3>Capstone &amp; SBIR Funding</h3>
+            <p>Phase 1 SBIR submission and capstone completion (2025-2026).</p>
+            <p class="roadmap-status">● In Planning</p>
+          </article>
+          <article class="roadmap-item" data-reveal>
+            <span class="roadmap-phase">Phase 5</span>
+            <h3>Pre-Clinical Testing</h3>
+            <p>3D printed models + animal studies in preparation for clinical trials.</p>
+            <p class="roadmap-status">● Next</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact-inner">
+        <div class="contact-copy" data-reveal>
+          <div class="contact-icon">✉️</div>
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="section-subtitle">
+            Interested in collaborating, piloting, or learning more about HomeScope? We'd love to hear from you.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:connect@homescope.io">connect@homescope.io</a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a>
+          </div>
+        </div>
+        <form class="contact-form" data-reveal>
+          <div class="form-row">
+            <input type="text" placeholder="Full Name" required />
+            <input type="email" placeholder="Email Address" required />
+          </div>
+          <div class="form-row">
+            <input type="text" placeholder="Organization" />
+            <input type="text" placeholder="Inquiry Type" />
+          </div>
+          <textarea rows="4" placeholder="Tell us more about your inquiry..." required></textarea>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner" data-reveal>
+      <div>
+        <p class="logo">HomeScope</p>
+        <p class="footer-copy">A novel catheter-based cystoscope for bladder cancer surveillance. Enabling diagnostic-grade imaging anywhere through secure EHR integration.</p>
+        <span>© <span id="year"></span> HomeScope. Texas A&amp;M School of Engineering Medicine × Houston Methodist Hospital.</span>
+      </div>
+      <div class="footer-links">
+        <div>
+          <p class="footer-title">Quick Links</p>
+          <a href="#problem">Problem</a>
+          <a href="#solution">Solution</a>
+          <a href="#team">Team</a>
+          <a href="#awards">Awards</a>
+        </div>
+        <div>
+          <p class="footer-title">Resources</p>
+          <a href="#research">Research</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <a href="#top" class="back-to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
 </html>
