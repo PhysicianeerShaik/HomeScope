@@ -177,14 +177,14 @@
         width: 0%;
         background: rgba(255, 255, 255, 0.95);
         border-radius: 999px;
-        transition: width 180ms linear;
+        transition: none;
       }
 
       /* Device */
       .device-shell {
         position: relative;
-        width: min(96vw, 440px);
-        aspect-ratio: 9 / 16;
+        width: min(98vw, 520px);
+        height: min(90vh, 980px);
         display: grid;
         place-items: center;
       }
@@ -292,7 +292,8 @@
           justify-content: space-between;
         }
         .device-shell {
-          width: min(100%, 420px);
+          width: 100vw;
+          height: calc(100vh - 180px);
         }
       }
     </style>
@@ -371,6 +372,7 @@
       let autoTimer = null;
       let holdTimer = null;
       let isHolding = false;
+      let lastTouchTime = 0;
       let deckEl = null;
       let slideEls = [];
 
@@ -428,32 +430,13 @@
           el.setAttribute("aria-hidden", active ? "false" : "true");
         });
 
-        // Update progress: previous full, current animated when auto on
+        // Update progress: previous and current filled, rest empty (no animation)
         const segments = Array.from(progressTrack.querySelectorAll(".segment > span"));
         segments.forEach((fill, i) => {
           if (i < index) fill.style.width = "100%";
-          else if (i > index) fill.style.width = "0%";
-          else fill.style.width = autoOn ? "0%" : "100%";
+          else if (i === index) fill.style.width = "100%";
+          else fill.style.width = "0%";
         });
-
-        if (autoOn) animateCurrentProgress();
-      }
-
-      function animateCurrentProgress() {
-        const fills = Array.from(progressTrack.querySelectorAll(".segment > span"));
-        const fill = fills[index];
-        if (!fill) return;
-
-        const start = performance.now();
-        const duration = AUTO_MS;
-
-        function tick(now) {
-          if (!autoOn || isHolding) return;
-          const t = clamp((now - start) / duration, 0, 1);
-          fill.style.width = `${Math.round(t * 100)}%`;
-          if (t < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
       }
 
       function go(next) {
@@ -505,11 +488,19 @@
       }
 
       function attachEvents() {
-        // Tap/click to advance (but ignore clicks on controls)
+        // Tap/click to navigate (left = prev, right = next; last slide opens site)
         deckEl.addEventListener("click", (e) => {
+          const now = performance.now();
+          if (now - lastTouchTime < 400) return; // ignore post-touch click
           const target = e.target;
           if (target && (target.id === "autoToggle" || target.closest(".topbar"))) return;
-          next();
+          const rect = deckEl.getBoundingClientRect();
+          const goLeft = e.clientX < rect.left + rect.width / 2;
+          if (index === SLIDES.length - 1) {
+            window.open("https://physicianeershaik.github.io/HomeScope/", "_blank");
+            return;
+          }
+          goLeft ? prev() : next();
         });
 
         // Keyboard
@@ -573,6 +564,7 @@
             return;
           }
 
+          lastTouchTime = performance.now();
           const changed = e.changedTouches && e.changedTouches[0];
           if (!changed) {
             next();
@@ -587,7 +579,13 @@
             if (dx < 0) next();
             else prev();
           } else {
-            next();
+            const rect = deckEl.getBoundingClientRect();
+            const goLeft = x1 < rect.left + rect.width / 2;
+            if (index === SLIDES.length - 1) {
+              window.open("https://physicianeershaik.github.io/HomeScope/", "_blank");
+              return;
+            }
+            goLeft ? prev() : next();
           }
         }, { passive: true });
       }
