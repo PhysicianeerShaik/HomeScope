@@ -5,12 +5,10 @@ const SLIDES = [
   { src: "./assets/02-tap.png", alt: "Tap to view" },
   { src: "./assets/03-stickers.png", alt: "Hashtag stickers" },
   { src: "./assets/04-cities.png", alt: "Cities: Las Vegas, Houston, Dallas" },
-  { src: "./assets/05-evolution.png", alt: "Product evolution" },
-  { src: "./assets/06-prototype.png", alt: "Prototype preview" },
-  { src: "./assets/07-63.png", alt: "63% statistic" },
-  { src: "./assets/08-whats-next.png", alt: "What’s next" },
-  { src: "./assets/09-thanks.png", alt: "Thanks slide" },
-  { src: "./assets/10-outro.png", alt: "Final outro slide" },
+  { src: "./assets/05-63.png", alt: "63% statistic" },
+  { src: "./assets/06-stats.png", alt: "6 conferences, 4 cities, 2 years, 1 mission" },
+  { src: "./assets/07-thanks.png", alt: "Thanks slide" },
+  { src: "./assets/08-outro.png", alt: "Outro slide" },
 ];
 
 const AUTO_MS = 4200; // story timing
@@ -45,15 +43,10 @@ function build() {
   slideEls = SLIDES.map((s, i) => {
     const d = document.createElement("div");
     d.className = "slide" + (i === 0 ? " active" : "");
+    d.style.backgroundImage = `url('${s.src}')`;
     d.setAttribute("aria-hidden", i === 0 ? "false" : "true");
     d.setAttribute("data-index", String(i));
     d.title = s.alt;
-    const img = document.createElement("img");
-    img.src = s.src;
-    img.alt = s.alt;
-    img.decoding = "async";
-    img.loading = "lazy";
-    d.appendChild(img);
     deckEl.appendChild(d);
     return d;
   });

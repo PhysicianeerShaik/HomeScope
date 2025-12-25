@@ -153,6 +153,7 @@
         flex-direction: column;
         align-items: center;
         gap: 14px;
+        position: relative;
       }
 
       /* Progress */
@@ -183,10 +184,10 @@
       /* Device */
       .device-shell {
         position: relative;
-        width: min(98vw, 520px);
-        height: min(90vh, 980px);
-        display: grid;
-        place-items: center;
+        width: 100%;
+        max-width: 560px;
+        display: flex;
+        justify-content: center;
       }
       .device-glow {
         position: absolute;
@@ -200,8 +201,9 @@
       }
       .device-frame {
         position: relative;
-        width: 100%;
-        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 28px;
         padding: 8px;
         background: linear-gradient(160deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
@@ -214,15 +216,19 @@
       .stage {
         position: relative;
         width: 100%;
-        height: 100%;
         border-radius: 22px;
         overflow: hidden;
         outline: none;
+        display: flex;
+        justify-content: center;
+        padding: 32px 12px 48px 12px;
       }
       .deck {
         position: relative;
-        width: 100%;
-        height: 100%;
+        width: min(92vw, calc((394 / 713) * (100vh - 140px)));
+        aspect-ratio: 394 / 713;
+        height: auto;
+        max-height: calc(100vh - 140px);
         border-radius: 20px;
         overflow: hidden;
         border: 1px solid var(--stroke);
@@ -235,9 +241,16 @@
         opacity: 0;
         transform: translateX(16px) scale(0.995);
         transition: opacity 320ms ease, transform 320ms ease;
-        background-size: cover;
-        background-position: center;
+        display: grid;
+        place-items: center;
+        background: #0c0f14;
+      }
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
         filter: saturate(1.02) contrast(1.02);
+        display: block;
       }
       .slide.active {
         opacity: 1;
@@ -261,10 +274,13 @@
       }
 
       .hint {
-        display: grid;
-        place-items: center;
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         pointer-events: none;
         width: 100%;
+        margin-top: 10px;
       }
       .pill {
         font-size: 12px;
@@ -354,10 +370,12 @@
         { src: "./assets/02-tap.png", alt: "Tap to view" },
         { src: "./assets/03-stickers.png", alt: "Hashtag stickers" },
         { src: "./assets/04-cities.png", alt: "Cities: Las Vegas, Houston, Dallas" },
-        { src: "./assets/05-63.png", alt: "63% statistic" },
-        { src: "./assets/06-stats.png", alt: "6 conferences, 4 cities, 2 years, 1 mission" },
-        { src: "./assets/07-thanks.png", alt: "Thanks slide" },
-        { src: "./assets/08-outro.png", alt: "Outro slide" },
+        { src: "./assets/05-evolution.png", alt: "Product evolution" },
+        { src: "./assets/06-prototype.png", alt: "Prototype preview" },
+        { src: "./assets/07-63.png", alt: "63% statistic" },
+        { src: "./assets/08-whats-next.png", alt: "What’s next" },
+        { src: "./assets/09-thanks.png", alt: "Thanks slide" },
+        { src: "./assets/10-outro.png", alt: "Final outro slide" },
       ];
 
       const AUTO_MS = 4200; // story timing
@@ -393,10 +411,15 @@
         slideEls = SLIDES.map((s, i) => {
           const d = document.createElement("div");
           d.className = "slide" + (i === 0 ? " active" : "");
-          d.style.backgroundImage = `url('${s.src}')`;
           d.setAttribute("aria-hidden", i === 0 ? "false" : "true");
           d.setAttribute("data-index", String(i));
           d.title = s.alt;
+          const img = document.createElement("img");
+          img.src = s.src;
+          img.alt = s.alt;
+          img.decoding = "async";
+          img.loading = "lazy";
+          d.appendChild(img);
           deckEl.appendChild(d);
           return d;
         });
